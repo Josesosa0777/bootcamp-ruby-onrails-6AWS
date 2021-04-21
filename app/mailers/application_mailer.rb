@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: 'support@ruby-gems-sosa.herokuapp.com'
   layout 'mailer'
 end
