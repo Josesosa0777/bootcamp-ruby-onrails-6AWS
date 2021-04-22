@@ -1,5 +1,8 @@
 %nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
-  %a.navbar-brand{:href => "/"} Rubygems
+  %a.navbar-brand{:href => "/"}
+    /= image_tag 'logo.png', size: '20x20', alt: "logo", class: 'rounded'
+    .fa.fa-graduation-cap
+    Corsego
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
@@ -53,6 +56,9 @@
               .fa.fa-sign-out-alt
               %b Sign out
     - else
-      %ul.navbar-nav
-        %li.nav-item= link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
-        %li.nav-item= link_to 'Log In', new_user_session_path, class: 'nav-link'
+      %ul.navbar-nav.mr-auto
+      %ul.navbar-nav.mr-right
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_user_registration_path)}"}
+          = link_to 'Sign Up', new_user_registration_path, class: 'nav-link'
+        %li.nav-item{class: "#{'active font-weight-bold' if current_page?(new_user_session_path)}"}
+          = link_to 'Log In', new_user_session_path, class: 'nav-link'
