@@ -69,3 +69,4 @@ gem "exception_notification"
 gem 'ransack'
 gem 'public_activity'
 gem 'rolify'
+gem 'pundit'
