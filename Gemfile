@@ -66,3 +66,5 @@ gem 'faker'
 gem 'devise'
 gem 'friendly_id', '~> 5.4.0'
 gem "exception_notification"
+gem 'ransack'
+gem 'public_activity'
