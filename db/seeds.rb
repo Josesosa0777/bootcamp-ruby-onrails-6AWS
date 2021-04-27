@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# User.create!(email: 'admin@example.com', password: 'admin@example.com', password_confirmation: 'admin@example.com') 
+User.create!(email: 'admin@example.com', password: 'admin@example.com', password_confirmation: 'admin@example.com', confirmed_at: Time.now) 
 user = User.new(
   email: 'admin@example.com', 
   password: 'admin@example.com', 
@@ -13,8 +13,9 @@ user = User.new(
 )
 user.skip_confirmation!
 user.save!
+
 PublicActivity.enabled = false
-30.times do
+2.times do
   Course.create!([{
     title: Faker::Educator.course_name,
     description: Faker::TvShows::GameOfThrones.quote,

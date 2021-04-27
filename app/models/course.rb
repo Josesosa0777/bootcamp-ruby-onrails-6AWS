@@ -4,6 +4,7 @@ class Course < ApplicationRecord
   
   belongs_to :user
   has_many :lessons, dependent: :destroy
+  has_many :enrollments
   
   def to_s
     title
@@ -11,7 +12,7 @@ class Course < ApplicationRecord
   has_rich_text :description
   
   extend FriendlyId
-  friendly_id:title,use: :slugged
+  friendly_id :title, use: :slugged
   
   # friendly_id :generated_slug, use: :slugged
   # def generated_slug
@@ -34,5 +35,9 @@ class Course < ApplicationRecord
   end
   include PublicActivity::Model
   tracked owner: Proc.new{ |controller, model| controller.current_user }
-
+  
+  def bought(user)
+    self.enrollments.where(user_id: [user.id], course_id: [self.id]).empty?
+  end
+  
 end
