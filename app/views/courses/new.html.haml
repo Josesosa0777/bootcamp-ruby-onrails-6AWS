@@ -1,6 +1,12 @@
+- content_for :title do
+  Corsego 
+  \| 
+  New course
 .card
   .card-header
-    %h1 New course
+    %h3
+      .fa.fa-graduation-cap
+      New course
   .card-body
     = render 'form'
   .card-footer
