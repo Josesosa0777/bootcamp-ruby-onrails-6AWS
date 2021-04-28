@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'activity', to: 'home#activity'
   get 'analytics', to: 'home#analytics'
+  get 'charts/users_per_day', to: 'charts#users_per_day'
+  get 'charts/enrollments_per_day', to: 'charts#enrollments_per_day'
+  get 'charts/course_popularity', to: 'charts#course_popularity'
   root 'home#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
