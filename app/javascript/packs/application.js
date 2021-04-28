@@ -20,3 +20,5 @@ import "@fortawesome/fontawesome-free/css/all"
 require('stylesheets/application.scss')
 
 require("@rails/actiontext")
+
+import "chartkick/chart.js"
