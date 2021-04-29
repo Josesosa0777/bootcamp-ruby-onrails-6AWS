@@ -99,7 +99,7 @@
 .card-columns
   - @latest.each do |course|
     = render 'courses/course', course: course
-text-right
+.text-right
   = link_to 'More new courses', courses_path(courses_search: {s: 'created_at desc'})
 %hr
 %h2 
